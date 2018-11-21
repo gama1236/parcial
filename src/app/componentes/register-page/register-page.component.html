@@ -1,0 +1,56 @@
+<div class="row">
+    <div class="col-md-6 mx-auto mt-5">
+      <div class="card">
+        <div class="card-body">
+          <h1 class="text-center">Registrarse
+          </h1>
+          <form [formGroup]="formGroup">
+             <!-- Nombre -->
+            <div class="example-container">
+              <mat-form-field>
+                <label for="nombre" style="font-size: 16px">Nombre</label>
+                <input matInput  style="font-size: 14px" name="ename" id="nombre" formControlName="nombre" required>
+              </mat-form-field>
+            </div>
+
+            <!-- Apellidos -->
+            <div class="example-container">
+              <mat-form-field>
+                <label for="apellidos" style="font-size: 16px">Apellidos</label>
+                <input matInput  style="font-size: 14px" name="ename" id="apellidos" formControlName="apellido" required>
+              </mat-form-field>
+            </div>
+
+            <!-- Correo Electronico -->
+            <div class="example-container">
+              <mat-form-field>
+                <label for="correo" style="font-size: 16px">Correo</label>
+                <input matInput style="font-size: 14px" id="correo" formControlName="correo" required>
+                <mat-error *ngIf="formGroup.contains('correo').valueOf().invalid">{{getErrorMessage()}}</mat-error>
+              </mat-form-field>
+            </div>
+
+            <!-- Password -->
+            <div class="example-container">
+              <mat-form-field>
+                <label for="password" style="font-size: 16px">Password</label>
+                <input matInput style="font-size: 14px" id="password" formControlName="contra" [type]="hide ? 'password' : 'text'">
+                <mat-icon matSuffix (click)="hide = !hide">{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+              </mat-form-field>
+              <p class="font-weight-normal" style="font-size: 12px; color: red; font-weight: bold">
+                La contraseña tiene que tener minimo 8 caracteres y maximo 16 caracteres
+                (Incluye mayuscula, minuscula, numeró y un caracter especial)
+              </p>
+            </div>
+
+
+
+
+            <button (click)="register()" class="btn btn-info btn-block">Registrarse</button>
+            <button (click)="cancel()" class="btn btn-primary btn-block">Cancelar</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+

@@ -1,0 +1,41 @@
+<div class="row">
+  <div class="col-md-6 mx-auto mt-5">
+    <div class="card">
+      <div class="card-body">
+        <h1 class="text-center">Login de Usuario</h1>
+        <form [formGroup]="formGroup">
+
+          <!-- Correo Electronico -->
+          <div class="example-container">
+            <mat-form-field>
+              <label for="correo" style="font-size: 16px">Correo</label>
+              <input matInput style="font-size: 14px" id="correo" formControlName="correo" required>
+              <mat-error *ngIf="formGroup.contains('correo').valueOf().invalid">{{getErrorMessage()}}</mat-error>
+            </mat-form-field>
+          </div>
+
+          <!-- Password -->
+          <div class="example-container">
+            <mat-form-field>
+              <label for="password" style="font-size: 16px">Password</label>
+              <input matInput style="font-size: 14px" id="password" formControlName="contra" [type]="hide ? 'password' : 'text'">
+              <mat-icon matSuffix (click)="hide = !hide">{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+            </mat-form-field>
+          </div>
+
+          <button (click)="login()" class="btn btn-info btn-block">Login</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-md-6 mx-auto mt-2">
+      <div class="card">
+        <div class="card-body d-flex justify-content-around">
+          <button class="btn btn-lg btn-google" (click)="loginGoogle()" ><i class="fa fa-google-plus"></i> Google</button>
+        </div>
+      </div>
+  </div>
+</div>

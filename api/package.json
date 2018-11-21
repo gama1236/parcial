@@ -1,0 +1,16 @@
+{
+  "name": "api-web",
+  "version": "1.0.0",
+  "description": "this api for friend city",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "@LuisBonilla",
+  "license": "MIT",
+  "devDependencies": {
+    "express": "^4.16.4",
+    "nodemailer": "^4.7.0",
+    "nodemon": "^1.18.6"
+  }
+}
